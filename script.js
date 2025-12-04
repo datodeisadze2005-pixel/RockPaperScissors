@@ -15,11 +15,14 @@ function getHumanChoice(){
      return prompt("rock, paper or scissors?: ")
 }
 
-let humanScore = 0
+let humanScore = 0   // keep count of scores
 
 let computerScore = 0
 
-function playRound(humanChoice, ComputerChoice){
+
+// one round played and updating scores
+
+function playRound(humanChoice, ComputerChoice){    
     if (humanChoice === "rock" && ComputerChoice === "paper"){
         computerScore += 1
         return "You lose! paper beats rock"
@@ -51,7 +54,9 @@ function playRound(humanChoice, ComputerChoice){
 }
 
 
-function playGame () {
+// play game function logs your and computer's choices and keeping you upadated with scores
+
+function playGame () { 
     let humanSelection = getHumanChoice()
     let computerSelection = getComputerChoice()
     console.log(`You: ${humanSelection} | Computer: ${computerSelection}`)
@@ -59,6 +64,9 @@ function playGame () {
     console.log(`You: ${humanScore} | Computer: ${computerScore}`)
     console.log("----------------------------------------------")
 }
+
+
+// this function prints result after five rounds
 
 function result(){
     if (computerScore > humanScore){
@@ -71,6 +79,8 @@ function result(){
         console.log("it's a tie!")
     }
 }
+
+//for this time i did not used loops 
 
 playGame()
 playGame()
